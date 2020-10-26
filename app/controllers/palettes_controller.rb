@@ -1,17 +1,13 @@
 class PalettesController < ApplicationController
     def index
         palettes = Palette.all
-        render json: palettes, include: [:tones] 
+        render json: PaletteSerializer.new(palettes).to_serialized_json
     end
 
     def show
         palatte = Palette.find_by(id: params[:id])
         if palatte
-            render json: {
-                id: palatte.id, 
-                name: palatte.name, 
-                background: palatte.background, 
-                tones: palatte.tones }
+            render json: PaletteSerializer.new(palette).to_serialized_json
         else
             render json: { message: 'Nope' }
         end
