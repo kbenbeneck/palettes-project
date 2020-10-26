@@ -6,7 +6,7 @@ class PaletteSerializer
 
     def to_serialized_json
         options = {
-            include: [:tones],
+            include: {tones: {except:[:created_at, :updated_at]}},
             except: [:created_at, :updated_at]
         }
         @palette.to_json(options)
