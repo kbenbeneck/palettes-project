@@ -19,5 +19,20 @@ function getPalettes() {
 }
 
 function renderPalettes(p) {
-    console.log ('hi')
+    let pDiv = document.createElement('div')
+    pDiv.setAttribute('id', `${p.id}`)
+    let pName = document.createElement('p')
+    pName.innerText = p.name
+    let pBackground = document.createElement('p')
+    pBackground = p.background 
+    let pTones = document.createElement('ul')
+    pTones.setAttribute('id', `${p.id}`)
+    p.tones.forEach(tone => {
+        let toneLI = document.createElement('li')
+        toneLI.innerText = `${tone.hex}`
+        toneLI.setAttribute('id', `${tone.id}`)
+        pTones.appendChild(toneLI)
+    })
+    pDiv.append(pName, pBackground, pTones)
+    main.appendChild(pDiv)
 }
