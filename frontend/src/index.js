@@ -5,10 +5,16 @@ const main = document.querySelector('main')
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    getPalettes()
+    displayGif()
 })
 
+function displayGif() {
+    clearMain()
+    main.innerHTML = `<img src="./media/elbow.gif" alt="elbow" width="500" height="500"/>`
+}
+
 function getPalettes() {
+    clearMain()
     fetch(PALETTES_URL)
     .then(resp => resp.json())
     .then(ps => {
@@ -35,4 +41,15 @@ function renderPalettes(p) {
     })
     pDiv.append(pName, pBackground, pTones)
     main.appendChild(pDiv)
+}
+
+function clearMain() {
+    main.innerHTML = ""
+}
+
+document.getElementById("palettes").addEventListener('click', getPalettes)
+document.getElementById("home").addEventListener('click', displayGif)
+document.getElementById("paletteForm").addEventListener('click', displayForm)
+function addClickToLinks() {
+    
 }
