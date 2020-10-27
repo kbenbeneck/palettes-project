@@ -5,8 +5,8 @@ class PalettesController < ApplicationController
     end
 
     def show
-        palatte = Palette.find_by(id: params[:id])
-        if palatte
+        palette = Palette.find_by(id: params[:id])
+        if palette
             render json: PaletteSerializer.new(palette).to_serialized_json
         else
             render json: { message: 'Nope' }
