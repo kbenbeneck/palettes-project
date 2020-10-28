@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function displayGif() {
     clearMain()
-    main.innerHTML = `<img src="./media/elbow.gif" alt="elbow" width="500" height="500"/>`
+    main.innerHTML = `<img src="./media/elbow.gif" alt="elbow" width="100%" id="gif"/>`
 }
 
 function getPalettes() {
@@ -48,8 +48,6 @@ function clearMain() {
 }
 
 document.getElementById("palettes").addEventListener('click', getPalettes)
+document.getElementById("tones").addEventListener('click', getTones)
 document.getElementById("home").addEventListener('click', displayGif)
 document.getElementById("paletteForm").addEventListener('click', displayForm)
-function addClickToLinks() {
-    
-}

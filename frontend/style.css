@@ -1,0 +1,9 @@
+.topnav{
+    background-color: #666;
+    overflow: hidden;
+}
+
+.topnav a{
+    float: left;
+    padding: 3%;
+}
