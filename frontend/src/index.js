@@ -24,6 +24,15 @@ function getPalettes() {
     })
 }
 
+function getTones() {
+    clearMain()
+    
+    fetch(TONES_URL)
+    .then(resp => resp.json())
+    .then(tones => renderTones(tones))
+    
+}
+
 function renderPalettes(p) {
     let pDiv = document.createElement('div')
     pDiv.setAttribute('id', `${p.id}`)
@@ -41,6 +50,20 @@ function renderPalettes(p) {
     })
     pDiv.append(pName, pBackground, pTones)
     main.appendChild(pDiv)
+}
+function renderTones(tones) {
+    let tUL = document.createElement('ul')
+    tones.forEach(tone => {
+    let tLI = document.createElement('li')
+    tLI.setAttribute('id', `${tone.id}`)
+    let tHex = document.createElement('p')
+    tHex.innerText = `${tone.hex}`
+    let pId = document.createElement('p')
+    pId.innerText = `${tone.palette_id}`
+    tUL.appendChild(tLI)
+    tLI.append(tHex, pId)
+    })
+    main.appendChild(tUL)   
 }
 
 function clearMain() {
