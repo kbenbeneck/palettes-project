@@ -7,3 +7,16 @@
     float: left;
     padding: 3%;
 }
+
+.square{
+    width: 333px;
+    height: 333px; 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(45deg);
+    
+}

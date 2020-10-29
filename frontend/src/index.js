@@ -26,7 +26,6 @@ function getPalettes() {
 
 function getTones() {
     clearMain()
-    
     fetch(TONES_URL)
     .then(resp => resp.json())
     .then(tones => renderTones(tones))
@@ -66,9 +65,41 @@ function renderTones(tones) {
     main.appendChild(tUL)   
 }
 
+function displayForm() {
+    clearMain()
+    let formDiv = document.createElement('div')
+    formDiv.setAttribute('id', "form")
+    let html = `
+            <label>Palette Name:</label>
+            <input type="text" id="name" placeholder="or don't, just pick a color">
+            <br>
+            <label>Background Hex Code</label>
+            <input type="text" id="background" placeholder="Pick a color =>">
+            <input type="color">
+            <hr>
+            <div id="newPal" class="square">
+
+            </div>
+    ` 
+    formDiv.innerHTML = html
+    main.appendChild(formDiv) 
+    let colorInput = document.querySelector("input[type=color]")
+    let bgInput = document.querySelector("input#background")
+    let newPal = document.querySelector("div#newPal")
+    colorInput.addEventListener('input', () => {
+        let color = colorInput.value
+        bgInput.value = color
+        newPal.style.backgroundColor = color
+    })
+}
+
+
+
+
 function clearMain() {
     main.innerHTML = ""
 }
+
 
 document.getElementById("palettes").addEventListener('click', getPalettes)
 document.getElementById("tones").addEventListener('click', getTones)
