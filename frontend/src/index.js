@@ -75,15 +75,21 @@ function displayForm() {
             <br>
             <label>Background Hex Code</label>
             <input type="text" id="background" placeholder="Pick a color =>">
-            <input type="color">
+            <input type="color" id="palcolor">
             <hr>
             <div id="newPal" class="square">
-
             </div>
-    ` 
+    
+            <label>Pick some color tones</label>
+            <input type="color" id="tonecolor">
+            <ul id="tonesList">
+
+            </ul>
+            ` 
+    
     formDiv.innerHTML = html
     main.appendChild(formDiv) 
-    let colorInput = document.querySelector("input[type=color]")
+    let colorInput = document.querySelector("#palcolor")
     let bgInput = document.querySelector("input#background")
     let newPal = document.querySelector("div#newPal")
     colorInput.addEventListener('input', () => {
@@ -91,6 +97,27 @@ function displayForm() {
         bgInput.value = color
         newPal.style.backgroundColor = color
     })
+
+    let toneInput = document.querySelector("#tonecolor")
+    let counter = 0; counter < 9;
+    let ul = document.getElementById('tonesList')
+    toneInput.addEventListener('input', () => {
+        let toneColor = toneInput.value
+        if (ul.childElementCount < 9 && ul.lastElementChild != toneColor) {
+        addTones(toneColor)
+        }
+
+    })
+    function addTones(toneColor) {
+        let li = document.createElement('li')
+        li.setAttribute('id', "tone" + counter++)
+        li.setAttribute('hex', `${toneColor}`)
+        li.innerText = `${toneColor}`
+        li.setAttribute('class', "toneLI")
+        ul.appendChild(li)
+    }
+
+
 }
 
 
