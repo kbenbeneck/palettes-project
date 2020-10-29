@@ -115,6 +115,7 @@ function displayForm() {
         li.innerText = `${toneColor}`
         li.setAttribute('class', "toneLI")
         ul.appendChild(li)
+        document.querySelector('li:last-child').style.backgroundColor = toneColor
     }
 
 

@@ -9,16 +9,61 @@
 }
 
 .square{
-    width: 333px;
-    height: 333px; 
+    width: 375px;
+    height: 375px; 
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
-    transform: rotate(45deg);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    transform: rotate(45deg) translate(10px, 10px);
+    box-shadow: 10px 10px 0px -0px rgba(0,0,0,1);
     
+}
+
+.toneLI{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+}
+ul {
+    list-style-type: none;
+}
+li {
+    box-shadow: 10px 10px 0px -0px rgba(0,0,0,1);
+    
+}
+#tone0{
+    transform: rotate(45deg) translate(-120px, -120px)
+}
+#tone1{
+    transform: rotate(45deg) translate(-120px, 0px)
+}
+#tone2{
+    transform: rotate(45deg) translate(0px, -120px)
+}
+#tone3{
+    transform: rotate(45deg) translate(-120px, 120px)
+}
+#tone4{
+    transform: rotate(45deg)
+}
+#tone5{
+    transform: rotate(45deg) translate(120px, -120px)
+}
+#tone6{
+    transform: rotate(45deg) translate(0px, 120px)
+}
+#tone7{
+    transform: rotate(45deg) translate(120px, 0px)
+}
+#tone8{
+    transform: rotate(45deg) translate(120px, 120px)
 }
