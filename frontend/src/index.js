@@ -73,20 +73,19 @@ function displayForm() {
             <label>Palette Name:</label>
             <input type="text" id="name" placeholder="or don't, just pick a color">
             <br>
-            <label>Background Hex Code</label>
+            <label>Background</label>
             <input type="text" id="background" placeholder="Pick a color =>">
             <input type="color" id="palcolor">
             <hr>
             <div id="newPal" class="square">
             </div>
-    
             <label>Pick some color tones</label>
             <input type="color" id="tonecolor">
             <ul id="tonesList">
-
             </ul>
+            <button type="button" id="reset">Reset</button>
+            <button type="button" id="save">Save</button>
             ` 
-    
     formDiv.innerHTML = html
     main.appendChild(formDiv) 
     let colorInput = document.querySelector("#palcolor")
@@ -97,7 +96,6 @@ function displayForm() {
         bgInput.value = color
         newPal.style.backgroundColor = color
     })
-
     let toneInput = document.querySelector("#tonecolor")
     let counter = 0; counter < 9;
     let ul = document.getElementById('tonesList')
@@ -117,8 +115,14 @@ function displayForm() {
         ul.appendChild(li)
         document.querySelector('li:last-child').style.backgroundColor = toneColor
     }
+    document.getElementById("reset").addEventListener('click', clearPalette)
+    
 
-
+    function clearPalette() {
+        counter = 0
+        ul.innerHTML = ""
+    }
+    
 }
 
 
