@@ -2,7 +2,9 @@ const BASE_URL = "http://localhost:3000"
 const PALETTES_URL = `${BASE_URL}/palettes`
 const TONES_URL = `${BASE_URL}/tones`
 const main = document.querySelector('main')
+
 //Home****************************************************************************
+
 document.addEventListener('DOMContentLoaded', () => {
     displayGif()
 })
@@ -11,6 +13,7 @@ function displayGif() {
     main.innerHTML = `<img src="./media/elbow.gif" alt="elbow" width="100%" id="gif"/>`
 }
 //PalettesIndex******************************************************************
+
 function getPalettes() {
     clearMain()
     fetch(PALETTES_URL)
@@ -24,6 +27,7 @@ function getPalettes() {
 }
 
 //Form***************************************************************************
+
 function displayForm() {
     clearMain()
     addFormHtml()
@@ -43,6 +47,7 @@ function displayForm() {
         let html = `
             <br>
             <form id="pform">
+                <h2>Step One</h2>
                 <label>Palette Background</label>
                 <input type="text" id="background" placeholder="Pick a color =>">
                 <input type="color" id="palcolor">
@@ -50,6 +55,7 @@ function displayForm() {
                 </div>
             </form>    
             <hr>
+            <h2>Step Two</h2>
             <label>Pick 9 tones</label>
             <input type="color" id="tonecolor">
             <ul id="tonesList">
@@ -83,7 +89,7 @@ function displayForm() {
         }
 
         document.getElementById("reset").addEventListener('click', clearPalette)
-        document.getElementById("save").addEventListener('click', postPaletteTones)
+        document.getElementById("save").addEventListener('click', createPalette)
 
         function clearPalette() {
             counter = 0
@@ -92,14 +98,38 @@ function displayForm() {
     }   
 }
 
+function createPalette() {   
+    let palette = {
+        background: document.getElementById('background').value,
+        tones_attributes: []
+    }
 
+    let fTones = document.getElementsByTagName('li')
+    for (let li of fTones){
+        let tone = {
+            hex: li.innerText,    
+        }
+        palette.tones_attributes.push(tone)
+    }        
+    console.log(palette)
 
-
-function postPaletteTones() {
-    
+    fetch(PALETTES_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json', 
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(palette)
+    })
+    .then(res => res.json())
+    .then(palette => {
+        let p = new Pal(palette)
+        console.log(p.id)
+    })   
 }
 
-//Helpers**********************************************************************
+//MainHelpers**********************************************************************
+
 function clearMain() {
     main.innerHTML = ""
 }
@@ -114,20 +144,23 @@ class Pal {
     constructor(palette) {
         this.id = palette.id
         this.background = palette.background
-        this.tones = palette.tones
+        this.tones = []
     }
     
     renderPalette() {
+
         return `
-        <div id="palette-${this.id}" class="square>
-            <a href="#" data-id="${this.id}">${this.background}</a>
+        <div id="palette-${this.id}" class="index-square">
+            
             <ul id="tones"></ul>
-            <button id="delete" data-id=${this.id}">Delete</button>
-            <button id="update-palette" data-id=${this.id}">Edit</button>
-            <button id="add-tones" data-id=${this.id}">Add Tones</button>        
+   
+                 
         </div>
         `
     }
+    
+   
   
 }
+
 

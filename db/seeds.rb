@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-pale_1 = Palette.create(name: "Test", background: "Testing")
-pale_2 = Palette.create(name: "Testing", background: "Testing")
-pale_3 = Palette.create(name: "Tested", background: "Testing")
+pale_1 = Palette.create(background: "Testing")
+pale_2 = Palette.create(background: "Testing")
+pale_3 = Palette.create(background: "Testing")
 
 tone_1 = Tone.create(hex: "Test", palette: pale_1)
 tone_2 = Tone.create(hex: "Test", palette: pale_2)
