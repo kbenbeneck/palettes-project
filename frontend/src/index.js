@@ -134,7 +134,8 @@ function createPalette() {
         main.innerHTML += p.renderPalette()
         let pdiv = document.querySelector('div.square')
         pdiv.style.background = pdiv.innerText
-        p.renderTones()  
+        p.renderTones() 
+        setTimeout(function() { getPalettes(); }, 3000);
     })
     
     
