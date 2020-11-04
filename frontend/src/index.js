@@ -21,7 +21,7 @@ function getPalettes() {
     .then(palettes => {
         palettes.forEach(palette =>{
             let pal = new Pal(palette)
-            main.innerHTML += pal.renderPalette()
+            
         })
     })
 }
@@ -111,8 +111,7 @@ function createPalette() {
         }
         palette.tones_attributes.push(tone)
     }        
-    console.log(palette)
-
+    
     fetch(PALETTES_URL, {
         method: 'POST',
         headers: {
@@ -123,9 +122,15 @@ function createPalette() {
     })
     .then(res => res.json())
     .then(palette => {
+        clearMain()
         let p = new Pal(palette)
-        console.log(p.id)
-    })   
+        main.innerHTML += p.renderPalette()
+        let pdiv = document.querySelector('div.square')
+        pdiv.style.background = pdiv.innerText
+        p.renderTones()  
+    })
+    
+    
 }
 
 //MainHelpers**********************************************************************
@@ -144,19 +149,44 @@ class Pal {
     constructor(palette) {
         this.id = palette.id
         this.background = palette.background
-        this.tones = []
+        this.tones = palette.tones
     }
     
     renderPalette() {
 
         return `
-        <div id="palette-${this.id}" class="index-square">
-            
-            <ul id="tones"></ul>
-   
-                 
+        <div id="palette-${this.id}" class="square">
+        <a href="#" data-id="${this.id}">${this.background}</a>
+            <ul id="tones"></ul>        
         </div>
         `
+    }
+
+    renderTones() {
+        let id = document.querySelector('a[data-id]').dataset.id
+        fetch(PALETTES_URL+`/${id}`)
+        .then(resp => resp.json())
+        .then(p => {console.log(p.tones)})
+      
+
+        let ul = document.querySelector(`div #tones`)
+        let counter = 0; counter < 9;
+        this.tones.forEach(tone => {
+            let li = document.createElement('li')
+            li.setAttribute('id', "t" + counter++)
+            li.setAttribute('class', "toneLI")
+            li.setAttribute('hex', `${tone.hex}`)
+            li.innerText = `${tone.hex}`
+            
+            
+            ul.appendChild(li)
+            
+            let fTones = document.querySelectorAll('li'); 
+            for (let li of fTones){
+                
+                li.style.background = li.innerText
+            }
+        })
     }
     
    

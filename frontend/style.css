@@ -18,7 +18,7 @@
     right: 0;
     margin: auto;
     transform: rotate(45deg) translate(10px, 10px);
-    box-shadow: 10px 10px 0px -0px rgba(0,0,0,1);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,1);
     
 }
 
@@ -36,34 +36,78 @@
 ul {
     list-style-type: none;
 }
-li {
-    box-shadow: 10px 10px 0px -0px rgba(0,0,0,1);
-    
-}
+
 #tone0{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(-120px, -120px)
 }
 #tone1{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(-120px, 0px)
 }
 #tone2{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(0px, -120px)
 }
 #tone3{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(-120px, 120px)
 }
 #tone4{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg)
 }
 #tone5{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(120px, -120px)
+    
 }
 #tone6{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(0px, 120px)
 }
 #tone7{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(120px, 0px)
 }
 #tone8{
+    box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(120px, 120px)
+}
+
+#t0{
+    box-shadow: 5px 5px 5px -0px rgba(0,0,0,1);
+    transform: translate(-120px, -120px)
+}
+#t1{
+    box-shadow: 5px 0px 5px -0px rgba(0,0,0,1);
+    transform: translate(-120px, 0px)
+}
+#t2{
+    box-shadow: 0px 5px 5px -0px rgba(0,0,0,1);
+    transform: translate(0px, -120px)
+}
+#t3{
+    box-shadow: 5px -5px 5px -0px rgba(0,0,0,1);
+    transform: translate(-120px, 120px)
+}
+#t4{
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,1);
+}
+#t5{
+    box-shadow: -5px 5px 5px -0px rgba(0,0,0,1);
+    transform: translate(120px, -120px)
+    
+}
+#t6{
+    box-shadow: 0px -5px 5px -0px rgba(0,0,0,1);
+    transform: translate(0px, 120px)
+}
+#t7{
+    box-shadow: -5px 0px 5px -0px rgba(0,0,0,1);
+    transform: translate(120px, 0px)
+}
+#t8{
+    box-shadow: -5px -5px 5px -0px rgba(0,0,0,1);
+    transform: translate(120px, 120px)
 }
