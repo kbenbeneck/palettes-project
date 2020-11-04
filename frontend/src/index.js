@@ -16,12 +16,19 @@ function displayGif() {
 
 function getPalettes() {
     clearMain()
+    let grid = document.createElement('div')
+    grid.setAttribute('id', "index")
+    main.append(grid)
+    let indexDiv = document.querySelector('#index')
+    
     fetch(PALETTES_URL)
     .then(resp => resp.json())
     .then(palettes => {
         palettes.forEach(palette =>{
             let pal = new Pal(palette)
+            indexDiv.innerHTML += pal.renderIndex()
             
+            pal.renderIndexTones()
         })
     })
 }
@@ -159,6 +166,8 @@ class Pal {
         <a href="#" data-id="${this.id}">${this.background}</a>
             <ul id="tones"></ul>        
         </div>
+        
+         
         `
     }
 
@@ -166,9 +175,6 @@ class Pal {
         let id = document.querySelector('a[data-id]').dataset.id
         fetch(PALETTES_URL+`/${id}`)
         .then(resp => resp.json())
-        .then(p => {console.log(p.tones)})
-      
-
         let ul = document.querySelector(`div #tones`)
         let counter = 0; counter < 9;
         this.tones.forEach(tone => {
@@ -177,20 +183,47 @@ class Pal {
             li.setAttribute('class', "toneLI")
             li.setAttribute('hex', `${tone.hex}`)
             li.innerText = `${tone.hex}`
-            
-            
-            ul.appendChild(li)
-            
+            ul.appendChild(li)  
             let fTones = document.querySelectorAll('li'); 
             for (let li of fTones){
-                
-                li.style.background = li.innerText
+                li.style.background = li.innerText 
+            }   
+        })
+    }
+
+  
+
+    renderIndex() {
+        return `
+        <div id="palette-${this.id}" class="index">
+        <a href="#" data-id="${this.id}">${this.background}</a>
+            <ul id="indexTones"></ul>        
+        </div>
+        `
+    }
+    renderIndexTones() {
+        let id = document.querySelector('a[data-id]').dataset.id
+        fetch(PALETTES_URL+`/${id}`)
+        .then(resp => resp.json())
+        let ul = document.querySelector(`div #tones`)
+        let counter = 0; counter < 9;
+
+        this.tones.forEach(tone => {
+            let li = document.createElement('li')
+            li.setAttribute('id', "itone" + counter++)
+            li.setAttribute('class', "indexTone")
+            li.setAttribute('hex', `${tone.hex}`)
+            li.innerText = `${tone.hex}`
+            let ul = document.querySelector(`div#palette-${this.id} ul`)
+            ul.appendChild(li)
+            let pdiv = document.querySelector(`div#palette-${this.id}`)  
+            pdiv.style.background = `${this.background}`
+            let fTones = document.querySelectorAll('li'); 
+            for (let li of fTones){
+                li.style.background = li.innerText 
             }
         })
     }
-    
-   
-  
 }
 
 

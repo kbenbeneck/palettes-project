@@ -32,10 +32,19 @@
     right: 0;
     margin: auto;
     
+    
+      
+    
+}
+li{
+    text-shadow: 1px 1px 3px white;
+    
+    
 }
 ul {
     list-style-type: none;
 }
+
 
 #tone0{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
@@ -109,5 +118,5 @@ ul {
 }
 #t8{
     box-shadow: -5px -5px 5px -0px rgba(0,0,0,1);
-    transform: translate(120px, 120px)
+    transform: translate(120px, 120px) 
 }
