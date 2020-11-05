@@ -36,6 +36,22 @@
       
     
 }
+body {
+    background-color: rgb(92, 92, 92);
+}
+#gifDiv{
+    
+    width: 500px;
+    height: 500px; 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+   
+}
 li{
     text-shadow: 1px 1px 3px white;
     
@@ -119,4 +135,75 @@ ul {
 #t8{
     box-shadow: -5px -5px 5px -0px rgba(0,0,0,1);
     transform: translate(120px, 120px) 
+}
+
+#index{
+    position: absolute;
+    margin-top: 6%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 126px;
+    row-gap: 128px;
+}
+
+.index{
+    
+    width: 300px;
+    height: 300px;
+    text-shadow: 1px 1px 3px white;
+    box-shadow: inset 0px 0px 20px -2px black;
+    transform: rotate(-45deg)
+}
+
+#itone0{
+    width: 75px;
+    height: 75px;
+    transform: rotate(75deg) skew(30deg) translate(85px, -36px) scaleY(0.864);
+    
+}
+    
+
+#itone1{
+    width: 75px;
+    height: 75px;
+    transform: rotate(15deg) skew(30deg) translate(139px, -68px) scaleY(0.864);
+
+}
+#itone2{
+    width: 75px;
+    height: 75px;
+    transform: rotate(15deg) skew(-30deg) translate(38px, -75px) scaleY(0.864);
+}
+#itone3{
+    width: 75px;
+    height: 75px;
+    transform: rotate(15deg) skew(-30deg) translate(-174px, -212px) scaleY(0.864);
+}
+#itone4{
+    width: 75px;
+    height: 75px;
+    transform: rotate(15deg) skew(-30deg) translate(-160px, -350px) scaleY(0.864);
+}
+#itone5{
+    width: 75px;
+    height: 75px;
+    transform: rotate(75deg) skew(30deg) translate(-146px, -263px) scaleY(0.864);
+}
+#itone6{
+    width: 75px;
+    height: 75px;
+    transform: rotate(15deg) skew(30deg) translate(101px, -364px) scaleY(0.864);
+}
+#itone7{
+    width: 75px;
+    height: 75px;
+    transform: rotate(75deg) skew(-30deg) translate(-429px, -173px) scaleY(0.864);
+}
+#itone8{
+    width: 75px;
+    height: 75px;
+    transform: rotate(75deg) skew(30deg) translate(-253px, -258px) scaleY(0.864);
 }

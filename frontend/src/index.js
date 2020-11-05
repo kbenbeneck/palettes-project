@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 function displayGif() {
     clearMain()
-    main.innerHTML = `<img src="./media/elbow.gif" alt="elbow" width="100%" id="gif"/>`
+    main.innerHTML += `<div id="gifDiv"><img src="./media/elbow.gif" alt="elbow"  id="gif"/></div>`
+    let body = document.querySelector('body')
+    
 }
 //PalettesIndex******************************************************************
 
@@ -61,7 +63,7 @@ function displayForm() {
                 <div class="square">
                 </div>
             </form>    
-            <hr>
+            
             <h2>Step Two</h2>
             <label>Pick 9 tones</label>
             <input type="color" id="tonecolor">
