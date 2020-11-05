@@ -2,11 +2,26 @@
     background-color: #666;
     overflow: hidden;
 }
-
+/* style nav links */
 .topnav a{
+    width: 30%;
     float: left;
-    padding: 3%;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
+/* change link color and hover */
+.topnav a.active {
+    background-color: #4c7add;
+    color: white;
+  }
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 
 .square{
     width: 375px;

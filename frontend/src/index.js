@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function displayGif() {
     clearMain()
     main.innerHTML += `<div id="gifDiv"><img src="./media/elbow.gif" alt="elbow"  id="gif"/></div>`
-    let body = document.querySelector('body')
+    
     
 }
 //PalettesIndex******************************************************************
@@ -152,7 +152,14 @@ function clearMain() {
 document.getElementById("palettes").addEventListener('click', getPalettes)
 document.getElementById("home").addEventListener('click', displayGif)
 document.getElementById("paletteForm").addEventListener('click', displayForm)
-
+let navLinks = document.querySelectorAll('.topnav a')
+for (let x = 0; x < navLinks.length; x++) {
+    navLinks[x].addEventListener('click', function() {
+        let current = document.getElementsByClassName("active")
+        current[0].className = current[0].className.replace("active", "")
+        this.className += "active"
+    })
+}
 //Classes**********************************************************************
 
 class Pal {
