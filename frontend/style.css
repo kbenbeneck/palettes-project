@@ -52,7 +52,7 @@
     
 }
 body {
-    background-color: rgb(92, 92, 92);
+    background-color: rgb(214, 214, 214);
 }
 #gifDiv{
     
@@ -80,6 +80,7 @@ ul {
 #tone0{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
     transform: rotate(45deg) translate(-120px, -120px)
+    
 }
 #tone1{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
@@ -177,7 +178,8 @@ ul {
     width: 75px;
     height: 75px;
     transform: rotate(75deg) skew(30deg) translate(85px, -36px) scaleY(0.864);
-    
+    box-shadow: inset -1px 1px 10px 1px #080808;
+    z-index: -1;
 }
     
 
@@ -185,40 +187,63 @@ ul {
     width: 75px;
     height: 75px;
     transform: rotate(15deg) skew(30deg) translate(139px, -68px) scaleY(0.864);
-
+    box-shadow: inset -1px 1px 10px 1px #080808;
 }
 #itone2{
     width: 75px;
     height: 75px;
-    transform: rotate(15deg) skew(-30deg) translate(38px, -75px) scaleY(0.864);
+    transform: rotate(15deg) skew(-30deg) translate(38px, -75px) scaleY(0.864);    
+ 
+    box-shadow: inset -1px 1px 10px 1px #080808;
+
 }
 #itone3{
     width: 75px;
     height: 75px;
     transform: rotate(15deg) skew(-30deg) translate(-174px, -212px) scaleY(0.864);
+    box-shadow: 0px -1px 9px 0px white;
 }
 #itone4{
     width: 75px;
     height: 75px;
     transform: rotate(15deg) skew(-30deg) translate(-160px, -350px) scaleY(0.864);
+    box-shadow: 0px -1px 9px 0px white;
 }
 #itone5{
     width: 75px;
     height: 75px;
     transform: rotate(75deg) skew(30deg) translate(-146px, -263px) scaleY(0.864);
+    box-shadow: 0px -1px 9px 0px white;
 }
 #itone6{
     width: 75px;
     height: 75px;
     transform: rotate(15deg) skew(30deg) translate(101px, -364px) scaleY(0.864);
+    box-shadow: 0px -1px 9px 0px white;
 }
 #itone7{
     width: 75px;
     height: 75px;
     transform: rotate(75deg) skew(-30deg) translate(-429px, -173px) scaleY(0.864);
+    box-shadow: 0px -1px 9px 0px white;
 }
 #itone8{
     width: 75px;
     height: 75px;
     transform: rotate(75deg) skew(30deg) translate(-253px, -258px) scaleY(0.864);
+    box-shadow: 0px -1px 9px 0px white;
+}
+#aboutDiv{
+    float: left;
+    margin-top: 20%;
+}
+#aboutDiv p{
+    float: left;
+    
+    width: 30%;
+    color: #242424;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px; 
 }

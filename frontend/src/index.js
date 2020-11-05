@@ -10,9 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 function displayGif() {
     clearMain()
-    main.innerHTML += `<div id="gifDiv"><img src="./media/elbow.gif" alt="elbow"  id="gif"/></div>`
+    main.innerHTML += `
+        <div id="gifDiv">
+        <img src="./media/elbow.gif" alt="elbow"  id="gif"/>
+        </div>
+        `
+        main.innerHTML += about()
+        
+        
+    }
     
-    
+    function about() {
+        return `
+        <div id="aboutDiv">
+           
+            <p id-"aboutText">
+            I needed to bring together my passion for creating geometric opart with my desire to earn income as a developer one day. 
+              
+            </p>
+        </div>
+    `
 }
 //PalettesIndex******************************************************************
 
