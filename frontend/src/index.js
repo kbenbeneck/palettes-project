@@ -26,7 +26,7 @@ function getPalettes() {
     fetch(PALETTES_URL)
     .then(resp => resp.json())
     .then(palettes => {
-        palettes.forEach(palette =>{
+        palettes.slice().reverse().forEach(palette =>{
             let pal = new Pal(palette)
             indexDiv.innerHTML += pal.renderIndex()
             
