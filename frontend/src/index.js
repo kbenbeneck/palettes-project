@@ -24,11 +24,12 @@ function displayGif() {
         return `
         <div id="aboutDiv">
             
-            <p id-"aboutText">
+            <p id="aboutText">
             I needed to bring together my passion for creating geometric opart with my desire to earn income as a developer one day. 
-              
+            
             </p>
-        </div>
+            </div>
+            <p id="directive"> Click New to start building color palettes. </p>
     `
 }
 //PalettesIndex******************************************************************
@@ -138,7 +139,7 @@ function createPalette() {
         }
         palette.tones_attributes.push(tone)
     }        
-    
+    console.log(palette)
     fetch(PALETTES_URL, {
         method: 'POST',
         headers: {
