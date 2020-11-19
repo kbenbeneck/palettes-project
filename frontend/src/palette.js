@@ -1,4 +1,4 @@
-export default class Pal {
+class Pal {
     constructor(palette) {
         this.id = palette.id
         this.background = palette.background

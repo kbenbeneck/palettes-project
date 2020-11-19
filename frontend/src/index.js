@@ -1,4 +1,5 @@
-import Pal from './palette'
+
+
 const BASE_URL = "http://localhost:3000"
 const PALETTES_URL = `${BASE_URL}/palettes`
 const TONES_URL = `${BASE_URL}/tones`
