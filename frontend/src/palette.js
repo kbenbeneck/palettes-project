@@ -6,17 +6,12 @@ class Pal {
     }
     
     renderPalette() {
-
         return `
         <div id="palette-${this.id}" class="square">
         <a href="#" data-id="${this.id}">${this.background}</a>
             <ul id="tones"></ul>        
         </div>
-        
-         
-        `
-        
-        
+        `    
     }
 
     renderTones() {
@@ -39,8 +34,6 @@ class Pal {
         })
     }
 
-  
-
     renderIndex() {
         return `
         <div id="palette-${this.id}" class="index">
@@ -49,11 +42,9 @@ class Pal {
         </div>
         `
     }
+    
     renderIndexTones() {
-        let id = document.querySelector('a[data-id]').dataset.id
-        fetch(PALETTES_URL+`/${id}`)
-        .then(resp => resp.json())
-        let ul = document.querySelector(`div #tones`)
+       
         let counter = 0; counter < 9;
 
         this.tones.forEach(tone => {
