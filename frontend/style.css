@@ -45,9 +45,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
-    
-      
+    margin: auto;  
 }
 
 
@@ -68,11 +66,11 @@ body {
    
 }
 li{
-    text-shadow: 1px 1px 3px white;
-    
-    
-    
+    display: block;
+    text-shadow: 1px 1px 3px white;   
 }
+
+
 
 ul {
     list-style-type: none;
@@ -188,7 +186,6 @@ ul {
     box-shadow: inset -1px 1px 10px 1px #080808;
     z-index: -1;
 }
-    
 
 #itone1{
     width: 75px;

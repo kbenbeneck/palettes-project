@@ -22,23 +22,23 @@ function displayGif() {
         
     }
     
-    function about() {
-        return `
+function about() {
+    return `
         <div id="aboutDiv">
-            
             <p id="aboutText">
-            I needed to bring together my passion for creating geometric opart with my desire to earn income as a developer one day. 
-            
+                I needed to bring together my passion for creating geometric opart with my desire to earn income as a developer one day. 
             </p>
-            </div>
-            <p id="directive"> Click New to start building color palettes. </p>
+        </div>
+            <p id="directive"> 
+                Click New to start building color palettes. 
+            </p>
     `
 }
 //PalettesIndex******************************************************************
 
 function getPalettes() {
     clearMain()
-    let grid = document.createElement('div')
+    let grid = document.createElement('section')
     grid.setAttribute('id', "index")
     main.append(grid)
     let indexDiv = document.querySelector('#index')
@@ -157,7 +157,7 @@ function createPalette() {
         clearMain()
         let p = new Pal(palette)
         main.innerHTML += p.renderPalette()
-        let pdiv = document.querySelector('div.square')
+        let pdiv = document.querySelector('section.square')
         pdiv.style.background = pdiv.innerText
         p.renderTones() 
         setTimeout(function() { getPalettes(); }, 3000);
@@ -182,9 +182,9 @@ function showPalette() {
     .then(palette => {
         let p = new Pal(palette)
         main.innerHTML += p.renderPalette()
-        let pdiv = document.querySelector(`div#palette-${p.id}`)  
+        let pdiv = document.querySelector(`section#palette-${p.id}`)  
         pdiv.style.background = `${p.background}`
-        let ul = document.querySelector(`div #tones`)
+        let ul = document.querySelector(`section #tones`)
         let counter = 0; counter < 9;
         p.tones.forEach(tone => {
             let li = document.createElement('li')
