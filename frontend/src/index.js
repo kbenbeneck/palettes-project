@@ -14,26 +14,22 @@ function displayGif() {
     clearMain()
     main.innerHTML += `
         <div id="gifDiv">
+            <p id="directive"> Click New to start building color palettes. </p>
             <img src="./media/elbow.gif" alt="elbow"  id="gif"/>
         </div>
-        `
-        main.innerHTML += about()
-        
-        
-    }
-    
-function about() {
-    return `
-        <div id="aboutDiv">
+        <section id="about">
             <p id="aboutText">
                 I needed to bring together my passion for creating geometric opart with my desire to earn income as a developer one day. 
             </p>
-        </div>
-            <p id="directive"> 
-                Click New to start building color palettes. 
-            </p>
-    `
+        </section>
+        `
+        
+        
+        
 }
+    
+
+
 
 
 

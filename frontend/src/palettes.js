@@ -8,9 +8,10 @@ function getPalettes() {
     fetch(PALETTES_URL)
     .then(resp => resp.json())
     .then(palettes => {
-        let sortedPalettes = palettes.sort((a, b) => (a.background > b.background) ? 1 : -1)
+        // let sortedPalettes = palettes.sort((a, b) => (a.background > b.background) ? 1 : -1)
 
-        sortedPalettes.forEach(palette =>{
+        // sortedPalettes.forEach(palette =>{
+            palettes.reverse().forEach(palette =>{
             let pal = new Pal(palette)
             indexDiv.innerHTML += pal.renderIndex()
             

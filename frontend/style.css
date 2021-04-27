@@ -4,11 +4,11 @@
 }
 /* style nav links */
 .topnav a{
-    width: 30%;
+    width: 100%;
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 16px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -26,13 +26,10 @@
 .square{
     width: 375px;
     height: 375px; 
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+   
     margin: auto;
-    transform: rotate(45deg) translate(10px, 10px);
+    transform: rotate(0deg) translate(0vw, 0vw);
     box-shadow: 0px 0px 5px 2px rgba(0,0,0,1);
     
 }
@@ -56,7 +53,7 @@ body {
     
     width: 500px;
     height: 500px; 
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     left: 0;
@@ -79,42 +76,42 @@ ul {
 
 #tone0{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(-120px, -120px)
+    transform: rotate(0deg) translate(-120px, 30px)
     
     
 }
 #tone1{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(-120px, 0px)
+    transform: rotate(0deg) translate(-120px, 150px)
 }
 #tone2{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(0px, -120px)
+    transform: rotate(0deg) translate(-120px, 270px)
 }
 #tone3{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(-120px, 120px)
+    transform: rotate(0deg) translate(0px, 30px)
 }
 #tone4{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg)
+    transform: rotate(0deg) translate(0px, 150px)
 }
 #tone5{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(120px, -120px)
+    transform: rotate(0deg) translate(0px, 270px)
     
 }
 #tone6{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(0px, 120px)
+    transform: rotate(0deg) translate(120px, 30px)
 }
 #tone7{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(120px, 0px)
+    transform: rotate(0deg) translate(120px, 150px)
 }
 #tone8{
     box-shadow: 10px 10px 10px -0px rgba(0,0,0,1);
-    transform: rotate(45deg) translate(120px, 120px)
+    transform: rotate(0deg) translate(120px, 270px)
 }
 
 #t0{
@@ -153,15 +150,45 @@ ul {
     box-shadow: -5px -5px 5px -0px rgba(0,0,0,1);
     transform: translate(120px, 120px) 
 }
-
+/* mobile */
+[class*="index"] { 
+    grid-template-columns: 1fr;
+}
+#aboutText {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+}
+#directive{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 20px; 
+    
+}
+/* tab */
+@media only screen and (min-width: 600px) {
+    #index {grid-template-columns: 1fr 1fr;}
+    .topnav a{width: 20%;}
+    #aboutText {width: 60%;}
+}
+/* desktop */
+@media only screen and (min-width: 768px) {
+    #index {grid-template-columns: 1fr 1fr 1fr;}
+    .topnav a{width: 29%;}
+    
+}
 #index{
     position: absolute;
-    margin-top: 6%;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 1000px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 15%;
+    margin-left: 15%;
+    margin-right: 15%;
+   
+    
     column-gap: 126px;
     row-gap: 128px;
 }
@@ -238,22 +265,5 @@ ul {
     transform: rotate(75deg) skew(30deg) translate(-255px, -256px) scaleY(0.864);
     box-shadow: 0px -1px 9px 0px white;
 }
-#aboutDiv{
-    float: left;
-    margin-top: 20%;
-}
-#aboutDiv p{
-    float: left;
 
-    width: 30%;
-    color: #242424;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 20px; 
-}
 
-#directive{
-    font-size: 20px; 
-    
-}
