@@ -29,8 +29,11 @@ Then navigate to the "frontend" directory within palettes-project
 Type "open index.html" 
 
 The page will load with the "Home" tap selected. 
+![img](public/images/home.png)
 Click "New" to start creating color palettes. 
+![img](public/images/form.png)
 The "Palettes Index" will be empty until creations are added.
+![img](public/images/index.png)
 
 
 
